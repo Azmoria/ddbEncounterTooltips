@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Allow homebrew spell tooltips in encounters
 // @namespace    github.com/azmoria
-// @version      0.1
+// @version      0.2
 // @description  Allow homebrew spell tooltips in encounters
 // @author       Azmoria
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==

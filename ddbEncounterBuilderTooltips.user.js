@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Allow homebrew tooltips in encounters
 // @namespace    github.com/azmoria
-// @version      0.4
+// @version      0.5
 // @description  Allow homebrew tooltips in encounters
 // @author       Azmoria
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
@@ -21,26 +21,21 @@
             for (let i = 0; i < mutation.addedNodes.length; i++) {
                 // do things to your newly added nodes here
                 let node = mutation.addedNodes[i]
-                if ($(node).hasClass('tooltip-hover')){
+                if ($(node).attr('data-tooltip-href') != undefined){
                     if($(node).attr('href').startsWith("https://dndbeyond.com/linkout?remoteUrl=https://www.dndbeyond.com")){
                        $(node).attr('href', $(node).attr('href').replace("https://dndbeyond.com/linkout?remoteUrl=", ''))
                     }
-                    if($(node).attr('data-tooltip-href') != undefined){
-
-                        let tooltipData = $(node).attr('data-tooltip-href').replace(/(.*\/\d+)-tooltip/g, '$1/tooltip-json')
-                        $(node).attr('data-tooltip-json-href', tooltipData)
-                    }
+                    let tooltipData = $(node).attr('data-tooltip-href').replace(/(.*\/\d+)-tooltip/g, '$1/tooltip-json')
+                    $(node).attr('data-tooltip-json-href', tooltipData)
                 }
-                else if ($(node).find('.tooltip-hover').length > 0){
-                    let tooltipNodes = $(node).find('.tooltip-hover');
+                else if ($(node).find('[data-tooltip-href]').length > 0){
+                    let tooltipNodes = $(node).find('[data-tooltip-href]');
                     for(let i = 0; i<tooltipNodes.length; i++){
                       let currNode = $(tooltipNodes[i]);
-                       if($(currNode).attr('href').startsWith("https://dndbeyond.com/linkout?remoteUrl=https://www.dndbeyond.com")){
+                       if($(currNode).attr('data-tooltip-href') != undefined){
                            $(currNode).attr('href', $(currNode).attr('href').replace("https://dndbeyond.com/linkout?remoteUrl=", ''))
-                           if($(currNode).attr('data-tooltip-href') != undefined){
-                               let tooltipData = $(currNode).attr('data-tooltip-href').replace(/(.*\/\d+)-tooltip/g, '$1/tooltip-json')
-                               $(currNode).attr('data-tooltip-json-href', tooltipData)
-                           }
+                           let tooltipData = $(currNode).attr('data-tooltip-href').replace(/(.*\/\d+)-tooltip/g, '$1/tooltip-json')
+                           $(currNode).attr('data-tooltip-json-href', tooltipData)
                        }
                     }
                 }

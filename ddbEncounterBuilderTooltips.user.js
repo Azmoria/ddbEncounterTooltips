@@ -1,14 +1,16 @@
 // ==UserScript==
 // @name         Allow homebrew spell tooltips in encounters
 // @namespace    github.com/azmoria
-// @version      0.2
+// @version      0.3
 // @description  Allow homebrew spell tooltips in encounters
 // @author       Azmoria
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @downloadURL  https://github.com/Azmoria/ddbEncounterTooltips/raw/main/ddbEncounterBuilderTooltips.user.js
 // @updateURL    https://github.com/Azmoria/ddbEncounterTooltips/raw/main/ddbEncounterBuilderTooltips.user.js
 // @require https://code.jquery.com/jquery-3.6.0.min.js
-// @match        https://www.dndbeyond.com/*
+// @match        https://www.dndbeyond.com/combat-tracker/*
+// @match        https://www.dndbeyond.com/encounter-builder*
+// @match        https://www.dndbeyond.com/encounters/*
 // @run-at       document-end
 // ==/UserScript==
 
@@ -27,7 +29,7 @@
                     }
                     if($(node).attr('data-tooltip-href') != undefined){
 
-                        let tooltipData = $(node).attr('data-tooltip-href').replace(/.*\/(\d+)-tooltip/g, '/spells/$1/tooltip-json')
+                        let tooltipData = $(node).attr('data-tooltip-href').replace(/(.*\/\d+)-tooltip/g, '$1/tooltip-json')
                         $(node).attr('data-tooltip-json-href', tooltipData)
                     }
                 }
@@ -38,7 +40,7 @@
                        if($(currNode).attr('href').startsWith("https://dndbeyond.com/linkout?remoteUrl=https://www.dndbeyond.com")){
                            $(currNode).attr('href', $(currNode).attr('href').replace("https://dndbeyond.com/linkout?remoteUrl=", ''))
                            if($(currNode).attr('data-tooltip-href') != undefined){
-                               let tooltipData = $(currNode).attr('data-tooltip-href').replace(/.*\/(\d+)-tooltip/g, '/spells/$1/tooltip-json')
+                               let tooltipData = $(currNode).attr('data-tooltip-href').replace(/(.*\/\d+)-tooltip/g, '$1/tooltip-json')
                                $(currNode).attr('data-tooltip-json-href', tooltipData)
                            }
                        }

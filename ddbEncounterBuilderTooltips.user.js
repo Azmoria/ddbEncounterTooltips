@@ -1,16 +1,14 @@
 // ==UserScript==
-// @name         Allow homebrew spell tooltips in encounters
+// @name         Allow homebrew tooltips in encounters
 // @namespace    github.com/azmoria
-// @version      0.3
-// @description  Allow homebrew spell tooltips in encounters
+// @version      0.4
+// @description  Allow homebrew tooltips in encounters
 // @author       Azmoria
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @downloadURL  https://github.com/Azmoria/ddbEncounterTooltips/raw/main/ddbEncounterBuilderTooltips.user.js
 // @updateURL    https://github.com/Azmoria/ddbEncounterTooltips/raw/main/ddbEncounterBuilderTooltips.user.js
 // @require https://code.jquery.com/jquery-3.6.0.min.js
-// @match        https://www.dndbeyond.com/combat-tracker/*
-// @match        https://www.dndbeyond.com/encounter-builder*
-// @match        https://www.dndbeyond.com/encounters/*
+// @match        https://www.dndbeyond.com/*
 // @run-at       document-end
 // ==/UserScript==
 

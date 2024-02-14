@@ -5,6 +5,8 @@
 // @description  Allow homebrew spell tooltips in encounters
 // @author       Azmoria
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @downloadURL  https://github.com/Azmoria/ddbEncounterTooltips/raw/main/ddbEncounterBuilderTooltips.user.js
+// @updateURL    https://github.com/Azmoria/ddbEncounterTooltips/raw/main/ddbEncounterBuilderTooltips.user.js
 // @require https://code.jquery.com/jquery-3.6.0.min.js
 // @match        https://www.dndbeyond.com/*
 // @run-at       document-end
